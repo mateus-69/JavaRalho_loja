@@ -1,0 +1,163 @@
+* {
+    padding: none;
+    margin: 0;
+    border: null;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: rgb(205, 205, 205);
+}
+
+header {
+    padding: 15px 0;
+    margin: 0 0 10px 20px;
+}
+
+.topo {
+    position: relative;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.topo nav {
+    position: absolute;
+    right: 10px;
+}
+
+nav li{
+    display: inline;
+    margin: 0 0 0 15px;
+    text-decoration-line: none;
+}
+
+nav a {
+    text-transform: uppercase;
+    text-decoration-line: none;
+}
+
+.produtos {
+	width: 940px;
+	margin: 0 auto;
+	padding: 50px 0;
+}
+
+.produtos li {
+	display: inline-block;
+	text-align: center;
+	width: 30%;
+	vertical-align: top;
+	margin: 0 1.5%;
+	padding: 30px 20px;
+	box-sizing: border-box;
+	border: 2px solid #000000;
+	border-radius: 10px;
+}
+
+.produtos li:hover {
+	border-color: ;
+}
+
+.produtos li:active {
+	border-color: ;	
+}
+
+.produtos li:hover h2 {
+	font-size: 28px;
+}
+
+.produtos h2 {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.prod-desc {
+	font-size: 18px;
+}
+
+.prod-price {
+	font-size: 22px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    /*-webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;*/
+    pointer-events: none;
+  }
+
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal > div {
+    width: 440px;
+    height: auto;
+    position: relative;
+    margin: 5% auto;
+    padding: 15px 20px;
+    background: #fff;
+}
+
+.modal-content {
+    border-radius: 25px;
+}
+
+
+
+.fechar {
+    position: absolute;
+    width: 30px;
+    right: 24px;
+    top: 15px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #8d0000;
+    text-decoration: none;
+  }
+
+.fechar:hover{
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+form {
+	margin: 40px 0;
+}
+
+form label, form legend {
+	display:block;
+	font-size: 20px;
+	margin: 0 0 10px;
+}
+
+.input-padrao {
+	display: block;
+	margin: 0 0 20px;
+	padding: 10px 25px;
+	width: 50%;
+}
+
+#submit {
+    font-size: 16px;
+    border-radius: 50px;
+    padding: 0.5em 1em;
+}
+
+#submit:hover{
+    font-size: 17px;
+    transition: 100ms ease-in;
+}
