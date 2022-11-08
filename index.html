@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loja</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="CSS/style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+    <body>
+        <header>
+            <div class="topo">
+                <nav>
+                    <ul>
+                        <li><a href="#modalOpen-carrinho"><i class="material-icons">shopping_cart</i></a></li>
+                        <li><a href="#modalOpen-perfil"><i class="material-icons">face</i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="modalOpen-carrinho" class="modal">
+            <div class="modal-content">
+                <a href="#Fechar" title="Fechar" class="fechar">X</a>
+                <h2>Carrinho</h2>
+                <ul>
+                    <li>
+                        <ul>
+                            <li></li>
+                            <p>Nome do Produto</p>
+                            <p>Breve Descrição</p>
+                            <input type="button" class="cart-button" id="prod-cart-button" value="–">
+                            <input type="button" class="cart-button" id="prod-add" value="+">
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <ul>
+                            <li></li>
+                            <p>Nome do Produto</p>
+                            <p>Breve Descrição</p>
+                            <input type="button" class="cart-button" id="prod-cart-button" value="–">
+                            <input type="button" class="cart-button" id="prod-add" value="+">
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <ul>
+                            <li></li>
+                            <p>Nome do Produto</p>
+                            <p>Breve Descrição</p>
+                            <input type="button" class="cart-button" id="prod-cart-button" value="–">
+                            <input type="button" class="cart-button" id="prod-add" value="+">
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div id="modalOpen-perfil" class="modal">
+            <div class="modal-content">
+                <a href="#Fechar" title="Fechar" class="fechar">X</a>
+                <h2>Profile</h2>
+                <form>
+                    <label for="nomesobrenome">Nome</label>
+                    <input type="text" id="nome" class="input-padrao" required>
+
+                    <label for="nomesobrenome">Sobrenome</label>
+                    <input type="text" id="sobrenome" class="input-padrao" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
+
+                    <label for="CPF">CPF</label>
+                    <input type="text" id="CPF" class="input-padrao" required placeholder="123456789-00">
+                    
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
+
+                    <input type="submit" id="submit" class="cadastrar" value="Cadastrar">
+                </form>
+            </div>
+        </div>
+        
+        <main>
+            <section>
+                <ul class="produtos">
+                    <li>
+                        <h2>Produto 1</h2>
+                        <img src="">
+                        <p class="prod-desc"></p>
+                        <p class="prod-price"></p>
+                    </li>
+                    <li>
+                        <h2>Produto 2</h2>
+                        <img src="">
+                        <p class="prod-desc"></p>
+                        <p class="prod-price"></p>
+                    </li>
+                    <li>
+                        <h2>Produto 3</h2>
+                        <img src="">
+                        <p class="prod-desc"></p>
+                        <p class="prod-price"></p>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </body>
+</html>
