@@ -14,9 +14,16 @@ submit.addEventListener("click", () => {
     let telefone = document.getElementById("telefone").value;
 
     CPF = CPF.replace("-","");
+    telefone = telefone.replace("(", "");
+    telefone = telefone.replace(")", "");
+    telefone = telefone.replace("-", "");
+    
+    if (nome == "" || sobrenome == "" || CPF == "" || email == "" || telefone == ""){
+        alert("Preencha todos os campos antes de enviar");
+    } else {
+        localStorage.setItem("Cadastros", JSON.stringify([...guarda,object]));
+        alert("Cadastro feito com sucesso!");
+    }
     
     var object = {"nome":nome, "sobrenome":sobrenome, "CPF":CPF, "email":email, "telefone":telefone};
-
-    localStorage.setItem("Cadastros", JSON.stringify([...guarda,object]));
-    alert("Cadastro feito com sucesso!");
 })
