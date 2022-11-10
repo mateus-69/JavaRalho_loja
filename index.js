@@ -12,6 +12,7 @@ submit.addEventListener("click", () => {
     let email = document.getElementById("email").value;
     let telefone = document.getElementById("telefone").value;
 
+    CPF = CPF.replace(".","");
     CPF = CPF.replace("-","");
     telefone = telefone.replace("(", "");
     telefone = telefone.replace(")", "");
