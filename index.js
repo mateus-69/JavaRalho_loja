@@ -1,20 +1,8 @@
-<<<<<<< HEAD
 let submit = document.getElementById("submit");
-
-submit.addEventListener("click", () => {
-    alert(document.getElementById("nome").value);
-})
-
-//localStorage?
-var testObject = { 'one': 1, 'two': 2, 'three': 3 };
-=======
-let submit = document.getElementById("submit");
->>>>>>> f24e04133c2c74450c606ae1e7685e9a20412139
 
 if (localStorage.getItem("Cadastros") == null){
     localStorage.setItem("Cadastros", "[]");
 }
-
 
 submit.addEventListener("click", () => {
     var guarda = JSON.parse(localStorage.getItem("Cadastros"));
