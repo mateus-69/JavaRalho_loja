@@ -11,14 +11,17 @@ submit.addEventListener("click", () => {
     let CPF = document.getElementById("CPF").value;
     let email = document.getElementById("email").value;
     let telefone = document.getElementById("telefone").value;
-    var object = {"nome":nome, "sobrenome":sobrenome, "CPF":CPF, "email":email, "telefone":telefone};
 
-    
+    CPF = CPF.replace(".","");
     CPF = CPF.replace(".","");
     CPF = CPF.replace("-","");
     telefone = telefone.replace("(", "");
     telefone = telefone.replace(")", "");
     telefone = telefone.replace("-", "");
+    
+    var object = {"nome":nome, "sobrenome":sobrenome, "CPF":CPF, "email":email, "telefone":telefone};
+
+    
     
     if (nome == "" || sobrenome == "" || CPF == "" || email == "" || telefone == ""){
         alert("Preencha todos os campos antes de enviar");
