@@ -11,7 +11,9 @@ submit.addEventListener("click", () => {
     let CPF = document.getElementById("CPF").value;
     let email = document.getElementById("email").value;
     let telefone = document.getElementById("telefone").value;
+    var object = {"nome":nome, "sobrenome":sobrenome, "CPF":CPF, "email":email, "telefone":telefone};
 
+    
     CPF = CPF.replace(".","");
     CPF = CPF.replace("-","");
     telefone = telefone.replace("(", "");
@@ -25,7 +27,6 @@ submit.addEventListener("click", () => {
         alert("Cadastro feito com sucesso!");
     }
     
-    var object = {"nome":nome, "sobrenome":sobrenome, "CPF":CPF, "email":email, "telefone":telefone};
 })
 
 //localStorage?
