@@ -37,27 +37,27 @@ function registra() {
     }
 }
 
-function lerDados(nomeChave){
-    //localStorage.clear();
-    if  (window.localStorage){
-        let aux = JSON.parse(
-            localStorage.getItem(nomeChave));
-        let dados;
-        if (aux != null){
-           dados = aux;
-        }
-        else{
-            dados = [];
-        }
-        return dados;
-    }
-    else{
-        alert("operacao não disponível");        
-    }
-    return false;
-}
+// function lerDados(nomeChave){
+//     //localStorage.clear();
+//     if  (window.localStorage){
+//         let aux = JSON.parse(
+//             localStorage.getItem(nomeChave));
+//         let dados;
+//         if (aux != null){
+//            dados = aux;
+//         }
+//         else{
+//             dados = [];
+//         }
+//         return dados;
+//     }
+//     else{
+//         alert("operacao não disponível");        
+//     }
+//     return false;
+// }
 
-let ligma = document.querySelectorAll(".img");
+let ligma = document.querySelectorAll(".image");
 let derbi = document.querySelectorAll(".desc");
 let monye = document.querySelectorAll(".valor");
 let qtde = document.querySelectorAll(".qtde");
@@ -66,7 +66,13 @@ let qtde = document.querySelectorAll(".qtde");
 let listaprodutos = produtosIniciais();
 for (let i = 0; i < produtosIniciais.length; i++) {
     ligma[i].src = produtosIniciais[i].url;
-    derbi[i].innerHTML = produtosIniciais[i].id;
-    console.log(produtosIniciais[i].url);
-
+    derbi[i].src = produtosIniciais[i].url;
+    // console.log(ligma[i].src);   
 }
+
+// for (let i = 0; i < produtosIniciais.length; i++) {
+//     ligma[i].src = produtosIniciais[i].url;
+//     derbi[i].innerHTML = produtosIniciais[i].id;
+//     console.log(produtosIniciais[i].url);
+
+// }

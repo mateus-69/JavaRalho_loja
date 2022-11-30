@@ -50,22 +50,22 @@ function produtosIniciais(){
 
 
     
-function lerDados(nomeChave){
-    //localStorage.clear();
-    if  (window.localStorage){
-        let aux = JSON.parse(
-            localStorage.getItem(nomeChave));
-        let dados;
-        if (aux != null){
-           dados = aux;
-        }
-        else{
-            dados = [];
-        }
-        return dados;
-    }
-    else{
-        alert("operacao não disponível");        
-    }
-    return false;
-}
+// function lerDados(nomeChave){
+//     //localStorage.clear();
+//     if  (window.localStorage){
+//         let aux = JSON.parse(
+//             localStorage.getItem(nomeChave));
+//         let dados;
+//         if (aux != null){
+//            dados = aux;
+//         }
+//         else{
+//             dados = [];
+//         }
+//         return dados;
+//     }
+//     else{
+//         alert("operacao não disponível");        
+//     }
+//     return false;
+// }
