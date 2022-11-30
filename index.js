@@ -1,10 +1,13 @@
 let submit = document.getElementById("submit");
+let fechar = document.getElementById("fehcar");
 
 if (localStorage.getItem("Cadastros") == null){
     localStorage.setItem("Cadastros", "[]");
 }
 
-submit.addEventListener("click", registra);
+submit.addEventListener("click", registra, () => {
+    fechar.href = "index.html";
+});
 
 function registra() {
     var guarda = JSON.parse(localStorage.getItem("Cadastros"));
@@ -13,7 +16,7 @@ function registra() {
     let CPF = document.getElementById("CPF").value;
     let email = document.getElementById("email").value;
     let telefone = document.getElementById("telefone").value;
-
+    
     CPF = CPF.replace(".","");
     CPF = CPF.replace(".","");
     CPF = CPF.replace("-","");
@@ -22,7 +25,7 @@ function registra() {
     telefone = telefone.replace("-", "");
     
     var object = {"nome":nome, "sobrenome":sobrenome, "CPF":CPF, "email":email, "telefone":telefone};
-
+    
     //verificar se cadastro já existe
     lerDados(CPF);
     
@@ -54,14 +57,16 @@ function lerDados(nomeChave){
     return false;
 }
 
-//localStorage?
-var testObject = { 'one': 1, 'two': 2, 'three': 3 };
+let ligma = document.querySelectorAll(".img");
+let derbi = document.querySelectorAll(".desc");
+let monye = document.querySelectorAll(".valor");
+let qtde = document.querySelectorAll(".qtde");
 
-// Put the object into storage
-localStorage.setItem('testObject', JSON.stringify(testObject));
+//pegando objetos produtos
+let listaprodutos = produtosIniciais();
+for (let i = 0; i < produtosIniciais.length; i++) {
+    ligma[i].src = produtosIniciais[i].url;
+    derbi[i].innerHTML = produtosIniciais[i].id;
+    console.log(produtosIniciais[i].url);
 
-// Retrieve the object from storage
-var retrievedObject = localStorage.getItem('testObject');
-
-console.log('retrievedObject: ', JSON.parse(retrievedObject));
-
+}

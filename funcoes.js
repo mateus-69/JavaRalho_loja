@@ -46,8 +46,10 @@ function produtosIniciais(){
                  url:"https://img.ibxk.com.br/2020/05/21/21010449898023.jpg?w=1120&h=420&mode=crop&scale=both"};
     listaprodutos.push(produto);
     return listaprodutos;
-}
+    }
 
+
+    
 function lerDados(nomeChave){
     //localStorage.clear();
     if  (window.localStorage){

@@ -9,7 +9,6 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <script defer src="index.js"></script>
-        <script defer src="funcoes.js"></script>
     </head>
     <body>
         <header>
@@ -72,24 +71,63 @@
 
                     <label for="nomesobrenome">Sobrenome</label>
                     <input type="text" id="sobrenome" class="input-padrao" required>
-
+                    
                     <label for="email">Email</label>
                     <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
-
+                    
                     <label for="CPF">CPF</label>
                     <input type="text" id="CPF" class="input-padrao" required placeholder="123456789-00">
                     
                     <label for="telefone">Telefone</label>
                     <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
-
-                    <input type="submit" id="submit" class="cadastrar" value="Cadastrar">
+                    
+                    <a id="fechar"><input type="submit" id="submit" class="cadastrar" value="Cadastrar"></a>
                 </form>
             </div>
         </div>
         
         <main>
             <section>
-                <ul class="produtos">
+                <tabel>
+                    <thead>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="" class="img" id="Calça Jeans masculina"></td>
+                            <td class="desc" id="descrição"></td>
+                            <td class="valor" id="valor"></td>
+                            <td class="qtde" id="qtde"></td>
+                            <td id="url"></td>
+                        </tr>
+                        <tr>
+                            <td><img class="img" id="Calça Jeans masculina"></td>
+                            <td class="desc" id="descrição"></td>
+                            <td class="valor" id="valor"></td>
+                            <td class="qtde" id="qtde"></td>
+                            <td id="url"></td>
+                        </tr>
+                        <tr>
+                            <td class="img" id="Mouse"></td>
+                            <td class="desc" id="descrição"></td>
+                            <td class="valor" id="valor"></td>
+                            <td class="qtde" id="qtde"></td>
+                            <td id="url"></td>
+                        </tr>
+                        <tr>
+                            <td class="img" id="Máscara do Zelda"></td>
+                            <td class="desc" id="descrição"></td>
+                            <td class="valor" id="valor"></td>
+                            <td class="qtde" id="qtde"></td>
+                            <td id="url"></td>
+                        </tr>
+
+                    </tbody>
+                </tabel>
+                
+                <!-- <ul class="produtos">
                     <li>
                         <h2>Botijão de Gás</h2>
                         <img src="Images/botijão_BUTIJAO.png" alt="Botijão de Gás" width="180px">
@@ -108,8 +146,9 @@
                         <p class="prod-desc"></p>
                         <p class="prod-price"></p>
                     </li>
-                </ul>
+                </ul> -->
             </section>
         </main>
     </body>
-</html>
+    <script src="funcoes.js"></script>
+    </html>
