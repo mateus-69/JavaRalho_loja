@@ -4,7 +4,9 @@ if (localStorage.getItem("Cadastros") == null){
     localStorage.setItem("Cadastros", "[]");
 }
 
-submit.addEventListener("click", () => {
+submit.addEventListener("click", registra);
+
+function registra() {
     var guarda = JSON.parse(localStorage.getItem("Cadastros"));
     let nome = document.getElementById("nome").value;    
     let sobrenome = document.getElementById("sobrenome").value;
@@ -21,7 +23,8 @@ submit.addEventListener("click", () => {
     
     var object = {"nome":nome, "sobrenome":sobrenome, "CPF":CPF, "email":email, "telefone":telefone};
 
-    
+    //verificar se cadastro já existe
+    lerDados(CPF);
     
     if (nome == "" || sobrenome == "" || CPF == "" || email == "" || telefone == ""){
         alert("Preencha todos os campos antes de enviar");
@@ -29,8 +32,27 @@ submit.addEventListener("click", () => {
         localStorage.setItem("Cadastros", JSON.stringify([...guarda,object]));
         alert("Cadastro feito com sucesso!");
     }
-    
-})
+}
+
+function lerDados(nomeChave){
+    //localStorage.clear();
+    if  (window.localStorage){
+        let aux = JSON.parse(
+            localStorage.getItem(nomeChave));
+        let dados;
+        if (aux != null){
+           dados = aux;
+        }
+        else{
+            dados = [];
+        }
+        return dados;
+    }
+    else{
+        alert("operacao não disponível");        
+    }
+    return false;
+}
 
 //localStorage?
 var testObject = { 'one': 1, 'two': 2, 'three': 3 };
