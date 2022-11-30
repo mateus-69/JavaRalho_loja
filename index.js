@@ -65,14 +65,9 @@ let qtde = document.querySelectorAll(".qtde");
 //pegando objetos produtos
 let listaprodutos = produtosIniciais();
 for (let i = 0; i < produtosIniciais.length; i++) {
+    for (let j = 0; j < produtosIniciais.length; j++) {
     ligma[i].src = produtosIniciais[i].url;
-    derbi[i].src = produtosIniciais[i].url;
-    // console.log(ligma[i].src);   
+    // derbi[i].src = produtosIniciais[i].url;
+    // console.log(ligma[i].src);
+    }
 }
-
-// for (let i = 0; i < produtosIniciais.length; i++) {
-//     ligma[i].src = produtosIniciais[i].url;
-//     derbi[i].innerHTML = produtosIniciais[i].id;
-//     console.log(produtosIniciais[i].url);
-
-// }
