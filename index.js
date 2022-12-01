@@ -76,7 +76,6 @@ for (let i = 0; i < add.length; i++) {
             carrinho.find(e => e.id == listaprodutos[i].id).qtde += 1;
             testaCarrinho();
         }
-        
         localStorage.setItem("Carrinho", JSON.stringify(carrinho));
         
     })
