@@ -66,14 +66,6 @@ table {
 	border-radius: 10px;
 }
 
-.produtos li:hover {
-	border-color: ;
-}
-
-.produtos li:active {
-	border-color: ;	
-}
-
 .produtos li:hover h2 {
 	font-size: 28px;
 }
@@ -102,9 +94,6 @@ table {
     background: rgba(0,0,0,0.8);
     z-index: 99999;
     opacity:0;
-    /*-webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;*/
     pointer-events: none;
   }
 
