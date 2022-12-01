@@ -1,5 +1,5 @@
 let submit = document.getElementById("submit");
-let fechar = document.getElementById("fehcar");
+let fechar = document.getElementById("fechar");
 
 if (localStorage.getItem("Cadastros") == null){
     localStorage.setItem("Cadastros", "[]");
@@ -8,6 +8,15 @@ if (localStorage.getItem("Cadastros") == null){
 submit.addEventListener("click", registra, () => {
     fechar.href = "index.html";
 });
+
+function testaCarrinho() {
+    let tesla = lerDados("Carrinho");
+    for(let i = 0; i < listaprodutos.length; i++){
+        if (tesla.find(e => e.id == listaprodutos[i].id) && tesla.find(e => e.id == listaprodutos[i].id).qtde >= listaprodutos[i].qtde-1){
+            add[i].disabled = true;
+        }
+    }
+}
 
 function registra() {
     var guarda = JSON.parse(localStorage.getItem("Cadastros"));
@@ -25,10 +34,7 @@ function registra() {
     telefone = telefone.replace("-", "");
     
     var object = {"nome":nome, "sobrenome":sobrenome, "CPF":CPF, "email":email, "telefone":telefone};
-    
-    //verificar se cadastro já existe
-    lerDados(CPF);
-    
+
     if (nome == "" || sobrenome == "" || CPF == "" || email == "" || telefone == ""){
         alert("Preencha todos os campos antes de enviar");
     } else {
@@ -37,37 +43,43 @@ function registra() {
     }
 }
 
-// function lerDados(nomeChave){
-//     //localStorage.clear();
-//     if  (window.localStorage){
-//         let aux = JSON.parse(
-//             localStorage.getItem(nomeChave));
-//         let dados;
-//         if (aux != null){
-//            dados = aux;
-//         }
-//         else{
-//             dados = [];
-//         }
-//         return dados;
-//     }
-//     else{
-//         alert("operacao não disponível");        
-//     }
-//     return false;
-// }
-
 let ligma = document.querySelectorAll(".image");
 let derbi = document.querySelectorAll(".desc");
 let monye = document.querySelectorAll(".valor");
 let qtde = document.querySelectorAll(".qtde");
 
-//pegando objetos produtos
+//pegando e aparecer objetos produtos
 let listaprodutos = produtosIniciais();
-for (let i = 0; i < produtosIniciais.length; i++) {
-    for (let j = 0; j < produtosIniciais.length; j++) {
-    ligma[i].src = produtosIniciais[i].url;
-    // derbi[i].src = produtosIniciais[i].url;
-    // console.log(ligma[i].src);
+for (let i = 0; i < listaprodutos.length; i++) {
+    for (let j = 0; j < listaprodutos.length; j++) {
+        ligma[i].src = listaprodutos[i].url;
+        derbi[i].innerHTML = listaprodutos[i].descricao;
+        monye[i].innerHTML = listaprodutos[i].valor;
     }
 }
+
+//carrinho
+let add = document.querySelectorAll(".somar");
+let carrinho = [];
+
+if (localStorage.getItem("Carrinho") == null){
+    localStorage.setItem("Carrinho", "[]");
+}
+
+for (let i = 0; i < add.length; i++) {
+    add[i].addEventListener("click", () => {
+        carrinho = lerDados("Carrinho");
+        
+        if (carrinho.find(e => e.id == listaprodutos[i].id) === undefined){
+            carrinho.push({id: listaprodutos[i].id, qtde: 1})
+        } else {
+            carrinho.find(e => e.id == listaprodutos[i].id).qtde += 1;
+            testaCarrinho();
+        }
+        
+        localStorage.setItem("Carrinho", JSON.stringify(carrinho));
+        
+    })
+}
+
+testaCarrinho();

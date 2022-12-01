@@ -36,6 +36,18 @@ nav a {
     text-decoration-line: none;
 }
 
+table {
+    border: solid 1px crimson;
+    border-radius: 15px;
+}
+
+.image {
+    width: 180px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    /* background-size: cover; */
+}
+
 .produtos {
 	width: 940px;
 	margin: 0 auto;

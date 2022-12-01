@@ -33,16 +33,16 @@ function produtosIniciais(){
                  qtde:20,
                  url:"https://images-americanas.b2w.io/produtos/01/00/img/107095/5/107095590_1GG.jpg"};
     listaprodutos.push(produto);
-    produto={id:"Batedeira", 
-                 descricao:"Batederira planetária",
+    produto={id:"Mascara do Zelda", 
+                 descricao:"A Máscara do herói do Link",
                  valor:120.67,
                  qtde:20,
-                 url: "./imagens/03868a5f80e6b886ea5805d9bac1a81e.jpg"};
+                 url: "https://s2.glbimg.com/7xtuvCGFaqzMAjlhurC2BMiIxK0=/0x0:589x382/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/c/C/AaABzLR2iOriDGeyTrCg/2016-01-21-mm-boss-majorasmask.jpg"};
     listaprodutos.push(produto);
     produto={id:"Mouse", 
                  descricao:"Mouse sem fio bluetooth",
                  valor:20.00,
-                 qtde:1,
+                 qtde:5,
                  url:"https://img.ibxk.com.br/2020/05/21/21010449898023.jpg?w=1120&h=420&mode=crop&scale=both"};
     listaprodutos.push(produto);
     return listaprodutos;
@@ -50,22 +50,22 @@ function produtosIniciais(){
 
 
     
-// function lerDados(nomeChave){
-//     //localStorage.clear();
-//     if  (window.localStorage){
-//         let aux = JSON.parse(
-//             localStorage.getItem(nomeChave));
-//         let dados;
-//         if (aux != null){
-//            dados = aux;
-//         }
-//         else{
-//             dados = [];
-//         }
-//         return dados;
-//     }
-//     else{
-//         alert("operacao não disponível");        
-//     }
-//     return false;
-// }
+function lerDados(nomeChave){
+    //localStorage.clear();
+    if  (window.localStorage){
+        let aux = JSON.parse(
+            localStorage.getItem(nomeChave));
+        let dados;
+        if (aux != null){
+           dados = aux;
+        }
+        else{
+            dados = [];
+        }
+        return dados;
+    }
+    else{
+        alert("operacao não disponível");        
+    }
+    return false;
+}
