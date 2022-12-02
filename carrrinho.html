@@ -7,30 +7,17 @@
     <title>Carrinho</title>
 </head>
     <body>
-        <label>Nome</label>
-        <input type="text" class="carrinho-dados">
-        <label>Sobrenome</label>
-        <input type="text" class="carrinho-dados">
-        <label>CPF</label>
-        <input type="text" class="carrinho-dados">
-        <label>E-mail</label>
-        <input type="text" class="carrinho-dados">
-        <label>Telefone</label>
-        <input type="text" class="carrinho-dados">
-        <!-- <label>CEP</label>
-        <input type="text" id="cep" class="carrinho-dados">
-        <label>Endereço</label>
-        <input type="text" class="carrinho-dados">
-        <label>Bairro</label>
-        <input type="text" class="carrinho-dados">
-        <label>Número</label>
-        <input type="text" class="carrinho-dados">
-        <label>Complemento</label>
-        <input type="text" class="carrinho-dados">
-        <label>Cidade</label>
-        <input type="text" class="carrinho-dados">
-        <label>UF</label>
-        <input type="text" class="carrinho-dados"> -->
+        <label for="CPF">CPF</label>
+        <input type="text" id="CPF" class="col input-padrao" required placeholder="123456789-00">
+        <br><br>
+        <label for="nomesobrenome">Nome</label>
+        <input type="text" id="nome" class="col input-padrao" required>
+        <label for="nomesobrenome">Sobrenome</label>
+        <input type="text" id="sobrenome" class="col input-padrao" required>        
+        <label for="email">Email</label>
+        <input type="email" id="email" class="col input-padrao" required placeholder="seuemail@dominio.com">
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" class="col input-padrao" required placeholder="(XX) XXXXX-XXXX">
         <br><br>
         <label class="col1" for="cep">Cep:</label>
         <input class="col obrigatorio" type="text" name="cep" maxlength="9" id="cep" value="">
@@ -53,6 +40,13 @@
         <label class="col1" for="estado">Estado:</label>
         <input class="col obrigatorio" type="text" name="estado" id="uf" value="">
         <br>
+        <h2>Produtos</h2>
+        <div class="echo">
+                    
+        </div>
+        <a id="fecharPedido"><input type="button" value="Fechar Pedido"></a>
+        
+        <script src="funcoes.js"></script>
         <script src="Carrinho.js"></script>
     </body>
 </html>

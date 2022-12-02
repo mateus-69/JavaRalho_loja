@@ -20,37 +20,17 @@ function testaCarrinho() {
 
 function registra() {
     var guarda = JSON.parse(localStorage.getItem("Cadastros"));
-    // let nome = document.getElementById("nome").value;    
-    // let sobrenome = document.getElementById("sobrenome").value;
-    // let CPF = document.getElementById("CPF").value;
-    // let email = document.getElementById("email").value;
-    // let telefone = document.getElementById("telefone").value;
-    // let cep = document.getElementById("cep").value;
-    // let rua = document.getElementById("logradouro").value;
-    // let bairro = document.getElementById("bairro").value;
-    // let cidade = document.getElementById("cidade").value;
-    // let estado = document.getElementById("estado").value;
-    // let numero = document.getElementById("numero").value;
-    // let complemento = document.getElementById("complemento").value;
-    
-    // CPF = CPF.replace(".","");
-    // CPF = CPF.replace(".","");
-    // CPF = CPF.replace("-","");
-    // telefone = telefone.replace("(", "");
-    // telefone = telefone.replace(")", "");
-    // telefone = telefone.replace("-", "");
     
     let object = document.querySelectorAll(".col")
     
+    let receba = [];
+    
     for (let e = 0; e < object.length; e++) {
-        if (nome == "" || sobrenome == "" || CPF == "" || email == "" || telefone == ""){
-            alert("Preencha todos os campos antes de enviar");
-        } else {
-            localStorage.setItem("Cadastros", JSON.stringify([...guarda,object[e].value]));
-            alert("Cadastro feito com sucesso!");
-            break;
+            // localStorage.setItem("Cadastros", JSON.stringify([...guarda,object[e].value]));
+            receba[e] = object[e].value
+            gravaDados("Cadastros", receba);
         }
-    }
+        alert("Cadastro feito com sucesso!");
 }
 
 let ligma = document.querySelectorAll(".image");
@@ -141,3 +121,8 @@ fecha.addEventListener("click", () => {
 
 escreverCarrinho();
 testaCarrinho();
+
+let finaliza = document.getElementById("finalizar");
+finaliza.addEventListener("click", () => {
+    finaliza.href = "carrrinho.html"
+})
