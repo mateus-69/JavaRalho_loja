@@ -20,27 +20,38 @@ function testaCarrinho() {
 
 function registra() {
     var guarda = JSON.parse(localStorage.getItem("Cadastros"));
-    let nome = document.getElementById("nome").value;    
-    let sobrenome = document.getElementById("sobrenome").value;
-    let CPF = document.getElementById("CPF").value;
-    let email = document.getElementById("email").value;
-    let telefone = document.getElementById("telefone").value;
+    // let nome = document.getElementById("nome").value;    
+    // let sobrenome = document.getElementById("sobrenome").value;
+    // let CPF = document.getElementById("CPF").value;
+    // let email = document.getElementById("email").value;
+    // let telefone = document.getElementById("telefone").value;
+    // let cep = document.getElementById("cep").value;
+    // let rua = document.getElementById("logradouro").value;
+    // let bairro = document.getElementById("bairro").value;
+    // let cidade = document.getElementById("cidade").value;
+    // let estado = document.getElementById("estado").value;
+    // let numero = document.getElementById("numero").value;
+    // let complemento = document.getElementById("complemento").value;
     
-    CPF = CPF.replace(".","");
-    CPF = CPF.replace(".","");
-    CPF = CPF.replace("-","");
-    telefone = telefone.replace("(", "");
-    telefone = telefone.replace(")", "");
-    telefone = telefone.replace("-", "");
+    // CPF = CPF.replace(".","");
+    // CPF = CPF.replace(".","");
+    // CPF = CPF.replace("-","");
+    // telefone = telefone.replace("(", "");
+    // telefone = telefone.replace(")", "");
+    // telefone = telefone.replace("-", "");
     
-    var object = {"nome":nome, "sobrenome":sobrenome, "CPF":CPF, "email":email, "telefone":telefone};
-
-    if (nome == "" || sobrenome == "" || CPF == "" || email == "" || telefone == ""){
-        alert("Preencha todos os campos antes de enviar");
-    } else {
-        localStorage.setItem("Cadastros", JSON.stringify([...guarda,object]));
-        alert("Cadastro feito com sucesso!");
+    let object = document.querySelectorAll(".col")
+    
+    for (let e = 0; e < object.length; e++) {
+        if (nome == "" || sobrenome == "" || CPF == "" || email == "" || telefone == ""){
+            alert("Preencha todos os campos antes de enviar");
+        } else {
+            localStorage.setItem("Cadastros", JSON.stringify([...guarda,object[e].value]));
+            alert("Cadastro feito com sucesso!");
+            break;
+        }
     }
+
 }
 
 let ligma = document.querySelectorAll(".image");
@@ -80,5 +91,34 @@ for (let i = 0; i < add.length; i++) {
         
     })
 }
+
+let fecha = document.getElementById("pedido");
+let divisao = document.getElementById("divisao");
+let pedido = [];
+
+
+
+if (localStorage.getItem("Pedido") == null){
+    localStorage.setItem("Pedido", "[]");
+}
+
+//pegar os dados dentro do localStorage do carrinho e salvar dentro do localStorage de pedido como pedido n;
+fecha.addEventListener("click", () => {
+    pedido = lerDados("Carrinho");
+    for (let i = 0; i < pedido.length; i++) {
+        divisao.innerHTML += 
+        `<ul>
+            <li>${pedido[i].id}</li>
+            <ul>
+                <li>${pedido[i].qtde}</li>
+                <li>${pedido[i].valor}</li>
+            </ul>
+        </ul>`
+
+        
+    }
+})
+
+
 
 testaCarrinho();

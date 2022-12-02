@@ -23,41 +23,13 @@
         </header>
 
         <div id="modalOpen-carrinho" class="modal">
-            <div class="modal-content">
-                <a href="#Fechar" title="Fechar" class="fechar">X</a>
-                <h2>Carrinho</h2>
+            <a href="#Fechar" title="Fechar" class="fechar">X</a>
+            <h2>Carrinho</h2>
+            <div id="divisao" class="modal-content">
                 <ul>
-                    <li>
-                        <ul>
-                            <li></li>
-                            <p>Nome do Produto</p>
-                            <p>Breve Descrição</p>
-                            <input type="button" class="cart-button" id="prod-cart-button" value="–">
-                            <input type="button" class="cart-button" id="prod-add" value="+">
-                        </ul>
-                    </li>
-                    
-                    <li>
-                        <ul>
-                            <li></li>
-                            <p>Nome do Produto</p>
-                            <p>Breve Descrição</p>
-                            <input type="button" class="cart-button" id="prod-cart-button" value="–">
-                            <input type="button" class="cart-button" id="prod-add" value="+">
-                        </ul>
-                    </li>
-                    
-                    <li>
-                        <ul>
-                            <li></li>
-                            <p>Nome do Produto</p>
-                            <p>Breve Descrição</p>
-                            <input type="button" class="cart-button" id="prod-cart-button" value="–">
-                            <input type="button" class="cart-button" id="prod-add" value="+">
-                        </ul>
-                    </li>
                     
                 </ul>
+                <a href="carrrinho.html"><input type="button" id="finalizar" value="Finalizar Pedido"></a>
             </div>
         </div>
 
@@ -65,24 +37,53 @@
             <div class="modal-content">
                 <a href="#Fechar" title="Fechar" class="fechar">X</a>
                 <h2>Profile</h2>
-                <form>
-                    <label for="nomesobrenome">Nome</label>
-                    <input type="text" id="nome" class="input-padrao" required>
-
-                    <label for="nomesobrenome">Sobrenome</label>
-                    <input type="text" id="sobrenome" class="input-padrao" required>
-                    
-                    <label for="email">Email</label>
-                    <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
-                    
-                    <label for="CPF">CPF</label>
-                    <input type="text" id="CPF" class="input-padrao" required placeholder="123456789-00">
-                    
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
-                    
+                <table class="table-modal">
+                    <td>
+                        <form>
+                            <label for="nomesobrenome">Nome</label>
+                            <input type="text" id="nome" class="col input-padrao" required>
+                            
+                            <label for="nomesobrenome">Sobrenome</label>
+                            <input type="text" id="sobrenome" class="col input-padrao" required>
+                            
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="col input-padrao" required placeholder="seuemail@dominio.com">
+                            
+                            <label for="CPF">CPF</label>
+                            <input type="text" id="CPF" class="col input-padrao" required placeholder="123456789-00">
+                            
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" class="col input-padrao" required placeholder="(XX) XXXXX-XXXX">
+                        </form>
+                    </td>
+                    <td>
+                    <form>
+                        <label class="col1" for="cep">Cep:</label>
+                        <input class="col obrigatorio" type="text" name="cep" maxlength="9" id="cep" value="">
+                        
+                        <label class="col1" for="logradouro">Endereco:</label>
+                        <input class="col obrigatorio" type="text" name="logradouro" id="logradouro" value="">
+                        
+                        <label class="col1" for="numero">Número:</label>
+                        <input class="col" type="text" name="numero" id="numero" value="">
+                        
+                        <label class="col1" for="numero">Complemento:</label>
+                        <input class="col" type="text" name="numero" id="complemento" value="">
+                        
+                        <label class="col1" for="bairro">Bairro:</label>
+                        <input class="col obrigatorio" type="text" name="bairro" id="bairro" value="">
+                        
+                        <label class="col1" for="cidade">Cidade:</label>
+                        <input class="col obrigatorio" type="text" name="cidade" id="localidade" value="">
+                        
+                        <label class="col1" for="estado">Estado:</label>
+                        <input class="col obrigatorio" type="text" name="estado" id="uf" value="">
+                        
+                        <script src="Carrinho.js"></script>
+                    </form>
+                </td>
+            </table>
                     <a id="fechar"><input type="submit" id="submit" class="cadastrar" value="Cadastrar"></a>
-                </form>
             </div>
         </div>
         
@@ -121,6 +122,7 @@
                         </tr>
                     </tbody>
                 </table>
+                <input type="button" id="pedido" class="pedido" value="Fechar Carrinho">
             </section>
         </main>
     </body>

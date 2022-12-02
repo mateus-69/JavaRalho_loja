@@ -103,7 +103,7 @@ table {
 }
 
 .modal > div {
-    width: 440px;
+    width: 840px;
     height: auto;
     position: relative;
     margin: 5% auto;
@@ -114,8 +114,6 @@ table {
 .modal-content {
     border-radius: 25px;
 }
-
-
 
 .fechar {
     position: absolute;
@@ -129,6 +127,10 @@ table {
     color: #8d0000;
     text-decoration: none;
   }
+
+.table-modal{
+    width: 740px;
+}
 
 .fechar:hover{
     border: 1px solid black;
