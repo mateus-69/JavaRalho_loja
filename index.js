@@ -51,7 +51,6 @@ function registra() {
             break;
         }
     }
-
 }
 
 let ligma = document.querySelectorAll(".image");
@@ -73,6 +72,42 @@ for (let i = 0; i < listaprodutos.length; i++) {
 let add = document.querySelectorAll(".somar");
 let carrinho = [];
 
+function escreverCarrinho(){
+    divisao.innerHTML = "";
+    pedido = lerDados("Carrinho");
+    for (let i = 0; i < pedido.length; i++) {
+        divisao.innerHTML += 
+        `<ul id = "${pedido[i].id}" class = "item"> 
+            <li>${pedido[i].id}</li>
+            <ul>
+                <li> Quantidade: ${pedido[i].qtde} <input class = "add" type = "button" value = "+"/> 
+                <input class = "sub" type = "button" value = "-"/> </li>
+                <li> Valor Total: ${valor(listaprodutos[i].valor*pedido[i].qtde)} </li>
+            </ul>
+        </ul>`        
+    }
+    let carrinho = lerDados("Carrinho");
+    let itens = document.querySelectorAll(".item");
+
+    itens.forEach(item => {
+        item.querySelector(".add").addEventListener("click", ()=>{
+            carrinho.find(e => e.id == item.id).qtde +=1;
+            gravaDados("Carrinho", carrinho);
+            escreverCarrinho()
+        });
+
+        item.querySelector(".sub").addEventListener("click", ()=>{
+            carrinho.find(e => e.id == item.id).qtde -=1;
+            if (carrinho.find(e => e.id == item.id).qtde == 0){
+                carrinho = carrinho.filter(e => e.id != item.id)
+            }
+            gravaDados("Carrinho", carrinho);
+            escreverCarrinho()
+        });
+    });
+}
+
+
 if (localStorage.getItem("Carrinho") == null){
     localStorage.setItem("Carrinho", "[]");
 }
@@ -88,15 +123,12 @@ for (let i = 0; i < add.length; i++) {
             testaCarrinho();
         }
         localStorage.setItem("Carrinho", JSON.stringify(carrinho));
-        
     })
 }
 
-let fecha = document.getElementById("pedido");
+let fecha = document.getElementById("carrinho");
 let divisao = document.getElementById("divisao");
 let pedido = [];
-
-
 
 if (localStorage.getItem("Pedido") == null){
     localStorage.setItem("Pedido", "[]");
@@ -104,21 +136,8 @@ if (localStorage.getItem("Pedido") == null){
 
 //pegar os dados dentro do localStorage do carrinho e salvar dentro do localStorage de pedido como pedido n;
 fecha.addEventListener("click", () => {
-    pedido = lerDados("Carrinho");
-    for (let i = 0; i < pedido.length; i++) {
-        divisao.innerHTML += 
-        `<ul>
-            <li>${pedido[i].id}</li>
-            <ul>
-                <li>${pedido[i].qtde}</li>
-                <li>${pedido[i].valor}</li>
-            </ul>
-        </ul>`
-
-        
-    }
+    escreverCarrinho()
 })
 
-
-
+escreverCarrinho();
 testaCarrinho();
